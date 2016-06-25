@@ -25,6 +25,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 	
+	
 	@Bean
 	CommandLineRunner runner (ReservationRepository rr){
 		return args -> {
@@ -39,7 +40,7 @@ public class DemoApplication {
 	}
 }
 
-/*@RestController
+@RestController
 class ReservationRestController{
 	
 	@RequestMapping("/reservations")
@@ -49,7 +50,7 @@ class ReservationRestController{
 	
 	@Autowired
 	private ReservationRepository reservationRepository;
-}*/
+}
 @RepositoryRestResource
 interface ReservationRepository extends JpaRepository<Reservation,Long>{
 	Collection <Reservation> findByReservationName (@Param("rn") String rn);
